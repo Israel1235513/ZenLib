@@ -1708,7 +1708,7 @@ function ZenLib:MakeWindow(WindowConfig)
         function ElementFunction:AddClipboard(ButtonConfig)
             ButtonConfig = ButtonConfig or {}
             ButtonConfig.Name = ButtonConfig.Name or "Button"
-            ButtonConfig.TextoParaCopiar = ButtonConfig.TextoParaCopiar or "Clip"  -- Definindo o texto a ser copiado
+            ButtonConfig.TextCopy = ButtonConfig.TextCopy or "Clip"  -- Definindo o texto a ser copiado
             ButtonConfig.Icon = ButtonConfig.Icon or "rbxassetid://3944703587"
         
             local Clipboard = {}
@@ -1749,7 +1749,7 @@ function ZenLib:MakeWindow(WindowConfig)
             AddConnection(Click.MouseButton1Up, function()
                 TweenService:Create(ClipboardFrame, TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(ZenLib.Themes[ZenLib.SelectedTheme].Second.R * 255 + 3, ZenLib.Themes[ZenLib.SelectedTheme].Second.G * 255 + 3, ZenLib.Themes[ZenLib.SelectedTheme].Second.B * 255 + 3)}):Play()
                 spawn(function()
-                    setclipboard(ButtonConfig.TextoParaCopiar)  -- Copia o texto para a área de transferência
+                    setclipboard(ButtonConfig.TextCopy)  -- Copia o texto para a área de transferência
                 end)
             end)
         
