@@ -1705,8 +1705,66 @@ function ZenLib:MakeWindow(WindowConfig)
 				}), "Text")
 			})
 		end
-		return ElementFunction   
-	end  
+        function ElementFunction:AddClipboard(ButtonConfig)
+            ButtonConfig = ButtonConfig or {}
+            ButtonConfig.Name = ButtonConfig.Name or "Button"
+            ButtonConfig.TextoParaCopiar = ButtonConfig.TextoParaCopiar or "Clip"  -- Definindo o texto a ser copiado
+            ButtonConfig.Icon = ButtonConfig.Icon or "rbxassetid://3944703587"
+        
+            local Clipboard = {}
+        
+            local Click = SetProps(MakeElement("Button"), {
+                Size = UDim2.new(1, 0, 1, 0)
+            })
+        
+            local ClipboardFrame = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 5), {
+                Size = UDim2.new(1, 0, 0, 33),
+                Parent = ItemParent
+            }), {
+                AddThemeObject(SetProps(MakeElement("Label", ButtonConfig.Name, 15), {
+                    Size = UDim2.new(1, -12, 1, 0),
+                    Position = UDim2.new(0, 12, 0, 0),
+                    Font = Enum.Font.GothamBold,
+                    Name = "Content"
+                }), "Text"),
+                AddThemeObject(SetProps(MakeElement("Image", ButtonConfig.Icon), {
+                    Size = UDim2.new(0, 20, 0, 20),
+                    Position = UDim2.new(1, -30, 0, 7),
+                }), "TextDark"),
+                AddThemeObject(MakeElement("Stroke"), "Stroke"),
+                Click
+            }), "Second")
+        
+            -- Alterar cor quando o mouse entra
+            AddConnection(Click.MouseEnter, function()
+                TweenService:Create(ClipboardFrame, TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(ZenLib.Themes[ZenLib.SelectedTheme].Second.R * 255 + 3, ZenLib.Themes[ZenLib.SelectedTheme].Second.G * 255 + 3, ZenLib.Themes[ZenLib.SelectedTheme].Second.B * 255 + 3)}):Play()
+            end)
+        
+            -- Alterar cor quando o mouse sai
+            AddConnection(Click.MouseLeave, function()
+                TweenService:Create(ClipboardFrame, TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {BackgroundColor3 = ZenLib.Themes[ZenLib.SelectedTheme].Second}):Play()
+            end)
+        
+            -- Ao clicar no botão, copia o texto para a área de transferência
+            AddConnection(Click.MouseButton1Up, function()
+                TweenService:Create(ClipboardFrame, TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(ZenLib.Themes[ZenLib.SelectedTheme].Second.R * 255 + 3, ZenLib.Themes[ZenLib.SelectedTheme].Second.G * 255 + 3, ZenLib.Themes[ZenLib.SelectedTheme].Second.B * 255 + 3)}):Play()
+                spawn(function()
+                    setclipboard(ButtonConfig.TextoParaCopiar)  -- Copia o texto para a área de transferência
+                end)
+            end)
+        
+            -- Ao pressionar o botão, altera a cor
+            AddConnection(Click.MouseButton1Down, function()
+                TweenService:Create(ClipboardFrame, TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(ZenLib.Themes[ZenLib.SelectedTheme].Second.R * 255 + 6, ZenLib.Themes[ZenLib.SelectedTheme].Second.G * 255 + 6, ZenLib.Themes[ZenLib.SelectedTheme].Second.B * 255 + 6)}):Play()
+            end)
+        
+            -- Função para alterar o texto do botão
+            function Clipboard:Set(ButtonText)
+                ClipboardFrame.Content.Text = ButtonText
+            end  
+        
+            return Clipboard
+        end
     
 	return TabFunction
 end   
