@@ -259,6 +259,13 @@ Options = <table> - The options in the dropdown.
 Callback = <function> - The function of the dropdown.
 ]]
 ```
+## Creating Clipboard
+```lua
+Tab:AddClipboard({
+	Name = "Dropdown",
+})
+```
+
 
 ### Adding a set of new Dropdown buttons to an existing menu
 ```lua
