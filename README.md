@@ -3,7 +3,7 @@ This documentation is for the stable release of Zen Library.
 
 ## Booting the Library
 ```lua
-local ZenLib = loadstring(game:HttpGet(('https://pastebin.com/raw/prt7UBEa](https://raw.githubusercontent.com/Israel1235513/ZenLib/refs/heads/main/Source')))()
+local ZenLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Israel1235513/ZenLib/refs/heads/main/Source')))()
 ```
 
 
