@@ -262,8 +262,11 @@ Callback = <function> - The function of the dropdown.
 ## Creating Clipboard
 ```lua
 Tab:AddClipboard({
-	Name = "Dropdown",
+    Name = "Clipboard",
+    TextoParaCopiar = "Texto copiado do dropdown",
+    Icon = "rbxassetid://3944703587"
 })
+
 ```
 
 
