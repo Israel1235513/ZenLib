@@ -1,4 +1,4 @@
--- Opa
+-- Opa k
 local MarketplaceService = game:GetService("MarketplaceService")
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
@@ -37,15 +37,15 @@ local zenitsulib = {
 		},
 		Zenitsu = {
 			["Color Hub 1"] = ColorSequence.new({
-				ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 200, 0)),  -- amarelo vibrante
-				ColorSequenceKeypoint.new(0.50, Color3.fromRGB(255, 150, 50)), -- laranja suave
-				ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 200, 0))   -- volta pro amarelo
+				ColorSequenceKeypoint.new(0.00, Color3.fromRGB(80, 60, 0)),    -- amarelo queimado escuro
+				ColorSequenceKeypoint.new(0.50, Color3.fromRGB(100, 70, 10)),  -- laranja escuro
+				ColorSequenceKeypoint.new(1.00, Color3.fromRGB(80, 60, 0))
 			}),
-			["Color Hub 2"] = Color3.fromRGB(255, 180, 40),   -- laranja mais claro
-			["Color Stroke"] = Color3.fromRGB(200, 140, 0),   -- contorno dourado
-			["Color Theme"] = Color3.fromRGB(255, 215, 0),    -- amarelo dourado
-			["Color Text"] = Color3.fromRGB(255, 255, 255),   -- branco para contraste
-			["Color Dark Text"] = Color3.fromRGB(120, 90, 0)  -- marrom/amarelado para texto escuro
+			["Color Hub 2"] = Color3.fromRGB(90, 65, 10),     -- laranja escurecido
+			["Color Stroke"] = Color3.fromRGB(120, 90, 30),   -- contorno dourado escuro
+			["Color Theme"] = Color3.fromRGB(150, 110, 20),   -- tema âmbar/amarelo escuro
+			["Color Text"] = Color3.fromRGB(255, 255, 255),   -- branco puro para contraste
+			["Color Dark Text"] = Color3.fromRGB(200, 180, 120) -- amarelo claro queimado
 		}
 	},
 	Info = {
