@@ -1404,10 +1404,6 @@ function zenitsulib:TabScale(NewScale)
 	zenitsulib.Save.TabSize = NewScale
 end
 
-function zenitsulib:(parameters)
-	
-end
-
 function zenitsulib:MakeWindow(Configs)
 	local WTitle = Configs[1] or Configs.Name or Configs.Title or "zenitsu Library V5"
 	local WMiniText = Configs[2] or Configs.SubTitle or "zenitsumodz"
