@@ -1793,7 +1793,7 @@ function zenitsulib:MakeWindow(Configs)
 			Font = Enum.Font.FredokaOne,
 			Text = TName,
 			TextColor3 = Theme["Color Text"],
-			TextSize = 10,
+			TextSize = 20,
 			TextXAlignment = Enum.TextXAlignment.Left,
 			TextTransparency = (FirstTab and 0.3) or 0,
 			TextTruncate = "AtEnd"
