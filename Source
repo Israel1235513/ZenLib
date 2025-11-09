@@ -1467,7 +1467,7 @@ function zenitsulib:MakeWindow(Configs)
 		Name = "Title"
 	}, {
 		InsertTheme(Create("TextLabel", {
-			Size = UDim2.fromScale(0, 1),
+			Size = UDim2.fromScale(0, 3),
 			AutomaticSize = "X",
 			AnchorPoint = Vector2.new(0, 1),
 			Position = UDim2.new(1, 5, 0.9),
