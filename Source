@@ -1258,7 +1258,7 @@ local function ButtonFrame(Instance, Title, Description, HolderSize)
 		AnchorPoint = Vector2.new(0, 0.5),
 		BackgroundTransparency = 1,
 		TextTruncate = "AtEnd",
-		TextSize = 13,
+		TextSize = 10,
 		TextXAlignment = "Left",
 		Text = "",
 		RichText = true
